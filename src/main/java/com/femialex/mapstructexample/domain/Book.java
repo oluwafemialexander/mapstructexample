@@ -13,6 +13,7 @@ import java.util.Set;
 @Entity
 @Table(name = "book")
 public class Book {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY,generator = "native")
     @Column(name = "id",unique = true, nullable = false)
