@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
 @Getter
@@ -15,6 +16,18 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+
+    @Basic
+    @Column(name = "name",nullable = false,length = 50)
+    private String name;
+
+    @Basic
+    @Column(name = "surname", nullable = false,length = 50)
+    private String surname;
+
+    @Basic
+    @Column(nullable = true, name = "birth_date")
+    private Date birthDate;
 
     @ManyToMany
     @JoinTable(name = "author_books",
